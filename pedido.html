@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>descubra</title>
+
+    <style>
+        body {
+            background-color: rgb(99, 238, 238);
+        }
+
+        .painel {
+            margin: auto;
+            background-color: rgb(11, 191, 223);
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 80px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative; /* Adicionado para ajustar a posição absoluta */
+        }
+
+        #sim {
+            height: 30px;
+            width: 50px;
+            background-color: #0065fc;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 30px;
+            width: 50px;
+            background-color: #0065fc;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        #mensagem {
+            display: none;
+            position: absolute;
+            top: 20px; /* Ajuste a posição vertical conforme necessário */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="painel">
+        <h1>  Desculpa o incômodo, só que tenho um pedido para fazer </h1>      
+        <img src="https://c.tenor.com/Z0_XOgJk9X8AAAAd/tenor.gif" alt="Deadpool GIF" width="300" height="200">
+
+        <h2>Aceita assistir deadpool comigo no cinema? </h2>
+
+        <button id="sim" onclick="mostrarMensagem()"> Sim! </button>
+        <button onmouseover="fuja()" id="nao"> Não! </button>
+
+        <p id="mensagem">SE SIM ME MANDA UM EMOJI DO CORAÇÃO AZUL E SE FOR NÃO MANDA UM CORAÇÃO PRETO</p>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+        function mostrarMensagem() {
+            var mensagemElement = document.getElementById("mensagem");
+            mensagemElement.style.display = 'block';
+        }
+   </script>
+</body>
+</html>
+
+
+
